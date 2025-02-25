@@ -46,7 +46,6 @@ start_message = """
 🎯 *Trading x Flow x Bot*
 """
 
-
 # Start command to display OTC Forex pairs with disclaimer and expiry info
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     keyboard = [otc_pairs[i:i + 2] for i in range(0, len(otc_pairs), 2)]
@@ -109,6 +108,7 @@ def main():
         logging.error("❌ BOT_TOKEN not found! Ensure it's set in the .env file.")
         return
 
+    # Create Application
     app = Application.builder().token(TOKEN).build()
 
     # Handlers
